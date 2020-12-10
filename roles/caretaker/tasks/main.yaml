@@ -2,7 +2,7 @@
 #### Now get the running config ####
 - name: ENSURE THAT THE DIR TO STORE RUNNING CONFIGS EXITS
   file:
-    path: "{{playbook_dir}}/running_configs"
+    path: "{{playbook_dir}}/configs"
     state: directory
     mode: 0777
   delegate_to: localhost

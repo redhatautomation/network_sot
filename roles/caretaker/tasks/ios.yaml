@@ -4,7 +4,7 @@
   ios_config:
     backup: yes
     backup_options:
-      dir_path: "{{ playbook_dir }}/running_configs/{{ inventory_hostname }}"
+      dir_path: "{{ playbook_dir }}/configs/{{ inventory_hostname }}"
       filename: running.cfg
   register: config_output
 
