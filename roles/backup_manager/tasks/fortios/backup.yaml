@@ -1,0 +1,18 @@
+---
+- name: "fortios.backup: fetch network configuration"
+  environment:
+    PYTHONHTTPSVERIFY: 0
+  fortios_config:
+    host: "{{ __backup_manager_provider.host }}"
+    username: "{{ __backup_manager_provider.username }}"
+    password: "{{ __backup_manager_provider.password }}"
+    https: "{{ __backup_manager_provider.https }}"
+    vdom: "{{ __backup_manager_provider.vdom }}"
+  register: r_fortios_config_backup
+
+- name: "fortios.backup: save configuration to git_store"
+  copy:
+    content: "{{ r_fortios_config_backup.running_config }}"
+    dest: "{{ git_store }}/{{ backup_manager_backup_path }}/running.cfg"
+    force: "yes"
+  notify: git_sync

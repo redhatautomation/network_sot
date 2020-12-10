@@ -1,18 +1,9 @@
 ---
-- name: Gather configs to routers
-  hosts: cisco1,arista1
-  gather_facts: no
-  tasks:
-    - name: gather configs
-      include_role:
-        name: caretaker
-
 - name: "Push Configurations"
-  hosts: localhost
+  hosts: all
   gather_facts: False
 
-  tasks:
-    - name: git push
-      include_role:
-        name: ansible-git
-        tasks_from: push
+  roles:
+  - role: backup_manager
+    function: backup
+    backup_manager_git_key_file: "{{ secret_key }}"
