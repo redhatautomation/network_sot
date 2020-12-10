@@ -1,6 +1,6 @@
 ---
 - name: "Push Configurations"
-  hosts: all
+  hosts: cisco1,arista1
   gather_facts: False
 
   roles:
