@@ -3,7 +3,7 @@
   eos_config:
     backup: "true"
     backup_options:
-      dir_path: "{{playbook_dir}}/configs/{{ inventory_hostname }}"
+      dir_path: "{{playbook_dir}}/config/{{ inventory_hostname }}"
       filename: running.cfg
   register: r_eos_config
 
