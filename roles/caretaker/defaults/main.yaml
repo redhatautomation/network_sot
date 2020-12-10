@@ -1,0 +1,3 @@
+sot_repo: git@github.com:redhatautomation/network_sot.git
+running: "{{playbook_dir}}/running_configs/{{ inventory_hostname }}/running.cfg"
+archived: "{{playbook_dir}}/archived_configs/{{ inventory_hostname }}/config/running.cfg"

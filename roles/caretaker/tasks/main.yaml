@@ -1,0 +1,13 @@
+---
+#### Now get the running config ####
+- name: ENSURE THAT THE DIR TO STORE RUNNING CONFIGS EXITS
+  file:
+    path: "{{playbook_dir}}/running_configs"
+    state: directory
+    mode: 0777
+  delegate_to: localhost
+  run_once: yes
+  # become: yes
+
+- name: GET THE RUNNING CONFIG
+  include_tasks: "{{ ansible_network_os }}.yaml"
