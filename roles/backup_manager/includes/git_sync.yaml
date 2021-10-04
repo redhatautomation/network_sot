@@ -8,6 +8,9 @@
 - debug:
     msg: "{{ git_store }}"
 
+- pause:
+    minutes: 5
+
 - name: "git_sync: push local to remote"
   run_once: true
   git_push:
