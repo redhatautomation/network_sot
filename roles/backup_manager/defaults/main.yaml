@@ -11,7 +11,7 @@ backup_manager_git_url: "git@{{ backup_manager_git_server }}:{{ backup_manager_g
 backup_manager_git_server: "github.com"
 backup_manager_git_repo: "network_sot"
 backup_manager_git_branch: "main"
-backup_manager_git_username: "gdykeman"
+backup_manager_git_username: "redhatautomation"
 backup_manager_git_key_file: "{{ secret_key }}"
 backup_manager_git_deploy_key: "{{ lookup('file', backup_manager_git_key_file) }}"
 backup_manager_git_deploy_key_file: "{{ backup_manager_git_key_file }}"
