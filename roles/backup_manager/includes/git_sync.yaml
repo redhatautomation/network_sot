@@ -8,6 +8,9 @@
 - debug:
     msg: "{{ git_store }}"
 
+- debug:
+    msg: "{{ backup_manager_git_deploy_key_file }}"
+
 - pause:
     minutes: 5
 
