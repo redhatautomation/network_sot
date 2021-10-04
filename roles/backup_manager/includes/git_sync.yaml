@@ -5,6 +5,9 @@
     repo: "{{ git_store }}"
     git_message: "Backup Manager"
 
+- debug:
+    msg: "{{ git_store }}"
+
 - name: "git_sync: push local to remote"
   run_once: true
   git_push:
